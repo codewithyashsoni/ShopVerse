@@ -2,6 +2,7 @@ import { useState } from "react"
 import products from "../data/products.js"
 import SearchBar from "../components/SearchBar.jsx"
 import CategoryFilter from "../components/CategoryFilter.jsx"
+import ProductsGrid from "../components/ProductsGrid.jsx"
 
 function Home(){
     const [searchTerm, setSearchTerm] = useState("");
@@ -35,6 +36,7 @@ function Home(){
                 <CategoryFilter selectedCategory={selectedCategory} 
                     setSelectedCategory={setSelectedCategory} />
             </div>
+            <ProductsGrid filteredProducts={filteredProducts} />
         </div>
     )
 }
