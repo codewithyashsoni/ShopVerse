@@ -5,7 +5,28 @@ import CategoryFilter from "../components/CategoryFilter.jsx"
 
 function Home(){
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("All")
+    const [selectedCategory, setSelectedCategory] = useState("All");
+
+    function categoryFilterProducts(productsArr, categoryFilter){
+        if(categoryFilter === "All"){
+            return productsArr
+        }
+        
+        return productsArr.filter((product) => product.category === categoryFilter)
+    }
+    
+    const categoryFilteredProducts = categoryFilterProducts(products, selectedCategory);
+
+    function searchFilterProducts(productsArr, searchFilter){
+        const trimmedTerm = searchFilter.trim().toLowerCase();
+        if(!trimmedTerm){
+            return productsArr
+        }
+        
+        return productsArr.filter((product) => product.name.toLowerCase().includes(trimmedTerm));
+    }
+
+    const filteredProducts = searchFilterProducts(categoryFilteredProducts, searchTerm);
 
     return(
         <div className="home-container">
