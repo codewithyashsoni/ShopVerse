@@ -15,7 +15,7 @@ import cricketBat from "../assets/products/cricket-bat.jpg";
 import football from "../assets/products/football.jpg";
 import gymWaterBottle from "../assets/products/gym-water-bottle.jpg";
 
-export const products = [
+const products = [
   {
     id: 1,
     name: "Wireless Headphones",
@@ -193,3 +193,5 @@ export const products = [
     rating: 4.2,
   },
 ];
+
+export default products
