@@ -1,9 +1,12 @@
 import { useState } from "react"
+import SearchBar from "../components/SearchBar.jsx"
 
 function Home(){
+    const [searchTerm, setSearchTerm] = useState("");
+
     return(
         <div className="home-container">
-            <h1>Home</h1>
+            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
     )
 }
