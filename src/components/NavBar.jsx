@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom"
 import { ShoppingBag, ShoppingCart } from "lucide-react"
+import { useContext } from "react"
+import CartContext from "../context/CartContext.jsx"
 
 function NavBar(){
+    const {cartItems} = useContext(CartContext);
+
+    console.log(cartItems);
+
+    let totalItems = cartItems.reduce((accumulator, currentEl) => {
+        return accumulator + currentEl.quantity
+    }, 0)
+
     return(
         <div className="navbar-container">
             <nav className="navbar">
@@ -15,7 +25,7 @@ function NavBar(){
                 <Link to="/cart" >
                     <div className="cart-icon">
                         <ShoppingCart className="shopping-cart-icon" />
-                        <span className="cart-badge">1</span>
+                        <span className="cart-badge">{totalItems}</span>
                     </div>
                 </Link>
             </nav>
