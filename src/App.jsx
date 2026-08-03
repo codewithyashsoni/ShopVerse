@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx"
 import Cart from "./pages/Cart.jsx"
 import Checkout from "./pages/Checkout.jsx"
 import ProductDetails from "./pages/ProductDetails.jsx"
+import OrderSuccess from "./pages/OrderSuccess.jsx"
 
 import { Routes, Route } from "react-router-dom"
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
     </div>
     </>

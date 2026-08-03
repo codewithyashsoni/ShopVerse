@@ -15,11 +15,6 @@ function OrderSummary(){
             <h2>Order Summary</h2>
             <p>Items: <span>{cartItems.length}</span></p>
             <p>Total: <span>{formattedTotal}</span></p>
-
-            <button 
-            className="checkout-btn"
-            
-            >Proceed to Checkout</button>
         </div>
     )
 }

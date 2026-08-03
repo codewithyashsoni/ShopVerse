@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import CartContext from "../context/CartContext.jsx"
 import CartItem from "../components/CartItem.jsx"
 import OrderSummary from "../components/OrderSummary.jsx"
@@ -32,6 +32,14 @@ function Cart(){
                 </div>
 
                 <OrderSummary />
+
+                <div className="checkout-btn-container">
+                    <Link to="/checkout">
+                        <button className="checkout-btn">Proceed to Checkout</button>
+                    </Link>
+                </div>
+
+                
             </div>
         </div>
     )

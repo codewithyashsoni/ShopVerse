@@ -518,7 +518,7 @@ body{
     display: flex;
     flex-direction: column;
     gap :1.5rem;
-    padding: 1rem 0 2rem 0;;
+    padding: 1rem 0 2rem 0;
     border-bottom: 2px solid var(--border-dark);
 }
 .cart-item-container{
@@ -654,7 +654,12 @@ body{
     font-weight: 700;
     color: var(--total);
 }
-.checkout-btn{
+.checkout-btn-container, .order-btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkout-btn, .order-btn{
     font-size: 1.5rem;
     padding: .5rem 1.5rem;
     margin: .5rem;
@@ -666,11 +671,83 @@ body{
     cursor: pointer;
     transition: var(--transition-normal);
 }
-.checkout-btn:hover{
+.checkout-btn:hover, .order-btn:hover{
     transform: translateY(-4px);
     background: var(--btn-success-hover);
     box-shadow: var(--shadow-lg);
 }
-.checkout-btn:active{
+.checkout-btn:active, .order-btn:active{
     transform: scale(.97);
+}
+.checkout-container{
+    margin: 1rem 0;
+    padding :1rem;
+    border:1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+}
+.checkout-container h1{
+    font-size :2.5rem;
+    color :var(--text-primary);
+    text-align: center;
+}
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid var(--border-dark);
+    padding :1rem 0;
+}
+.checkout-form h3{
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-top: 1rem ;
+}
+.form-block{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 0 1rem 2rem;
+    border-bottom: 1px solid var(--border-light);
+}
+.form-block label{
+    display: flex;
+    flex-direction: column;
+    gap :.2rem;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.form-block label input{
+    font-size :1.2rem;
+    padding :.4rem .8rem;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    outline: none;
+    border-radius: var(--radius-lg);
+    margin-bottom: .5rem;
+    color: var(--text-primary);
+    transition: var(--transition-normal);
+}
+.form-block label input:hover{
+    border-color: var(--input-hover);
+}
+.form-block label input::placeholder{
+    color: var(--input-placeholder)
+}
+.form-block label input:focus{
+    border-color: var(--input-focus);
+    box-shadow: var(--input-focus-shadow);
+}
+.form-block-payment{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1rem 2rem;
+    gap: .5rem;
+}
+.form-block-payment label{
+    display: flex;
+    gap: .5rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
