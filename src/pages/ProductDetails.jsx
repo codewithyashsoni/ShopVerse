@@ -10,6 +10,11 @@ function ProductDetails(){
 
     const { id } = useParams();
     const product = products.find(product => product.id === Number(id));
+
+    if(!product){
+        return <h2>Product not found</h2>;
+    }
+
     const {name, category, price, image, description, stock, rating} = product;
     const navigate = useNavigate();
 
@@ -31,6 +36,7 @@ function ProductDetails(){
 
     function handleAddToCart(){
         addToCart(product, quantity);
+        setQuantity(1);
     }
 
     return(
@@ -84,9 +90,10 @@ function ProductDetails(){
                     <button 
                         onClick={handleAddToCart} 
                         className="add-to-cart-btn"
+                        disabled={stock === 0}
                     >
                         <ShoppingCart className="btn-cart-icon" />
-                        <span>Add to Cart</span>
+                        <span>{stock > 0 ? "Add to cart" : "Out of Stock"}</span>
                     </button>
 
 

@@ -11,7 +11,7 @@ function Cart(){
     console.log(cartItems);
 
     function handleContinueShopping(){
-        navigate(-1);
+        navigate("/");
     }
 
     return(

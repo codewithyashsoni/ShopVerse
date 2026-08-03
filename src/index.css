@@ -484,12 +484,17 @@ body{
     cursor: pointer;
     transition: var(--transition-normal);
 }
-.add-to-cart-btn:hover{
+.add-to-cart-btn:disabled{
+    background: var(--danger);
+    cursor: not-allowed;
+    opacity: .7;
+}
+.add-to-cart-btn:hover:not(:disabled){
     background: var(--btn-primary-hover);
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
 }
-.add-to-cart-btn:active{
+.add-to-cart-btn:active:not(:disabled){
     transform: scale(.95);
 }
 .btn-cart-icon{

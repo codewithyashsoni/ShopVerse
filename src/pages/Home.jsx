@@ -1,12 +1,32 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import products from "../data/products.js"
 import SearchBar from "../components/SearchBar.jsx"
 import CategoryFilter from "../components/CategoryFilter.jsx"
 import ProductsGrid from "../components/ProductsGrid.jsx"
 
 function Home(){
-    const [searchTerm, setSearchTerm] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [searchTerm, setSearchTerm] = useState(() => {
+        const searchedTerm = sessionStorage.getItem("searched-term");
+        if(searchedTerm){
+            return JSON.parse(searchedTerm);
+        }
+        return ""
+    });
+    const [selectedCategory, setSelectedCategory] = useState(() => {
+        const storedCategory = sessionStorage.getItem("selected-category");
+        if(storedCategory){
+            return JSON.parse(storedCategory)
+        }
+        return "All"
+    });
+
+    useEffect(() => {
+        sessionStorage.setItem("searched-term", JSON.stringify(searchTerm))
+    }, [searchTerm])
+
+    useEffect(() => {
+        sessionStorage.setItem("selected-category", JSON.stringify(selectedCategory))
+    }, [selectedCategory])
 
     function categoryFilterProducts(productsArr, categoryFilter){
         if(categoryFilter === "All"){
