@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import CartContext from "../context/CartContext.jsx"
 import OrderSummary from "../components/OrderSummary";
 
 function Checkout(){
@@ -14,9 +15,11 @@ function Checkout(){
 
     const navigate = useNavigate();
 
+    const { clearCart } = useContext(CartContext);
+
     function handlePlaceOrder(){
-        //clearCart();
-        navigate("/order-success")
+        clearCart();
+        navigate("/order-success");
     }
 
 
@@ -139,7 +142,10 @@ function Checkout(){
 
             <div className="order-btn-container">
 
-                    <button className="order-btn">Place Order</button>
+                    <button 
+                        className="order-btn"
+                        onClick={handlePlaceOrder}
+                    >Place Order</button>
 
             </div>
         </div>

@@ -659,7 +659,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.checkout-btn, .order-btn{
+.checkout-btn, .order-btn, .success-btn{
     font-size: 1.5rem;
     padding: .5rem 1.5rem;
     margin: .5rem;
@@ -671,12 +671,12 @@ body{
     cursor: pointer;
     transition: var(--transition-normal);
 }
-.checkout-btn:hover, .order-btn:hover{
+.checkout-btn:hover, .order-btn:hover, .success-btn:hover{
     transform: translateY(-4px);
     background: var(--btn-success-hover);
     box-shadow: var(--shadow-lg);
 }
-.checkout-btn:active, .order-btn:active{
+.checkout-btn:active, .order-btn:active, .success-btn:active{
     transform: scale(.97);
 }
 .checkout-container{
@@ -750,4 +750,42 @@ body{
     font-size: 1.2rem;
     color: var(--text-secondary);
     font-weight: 500;
+}
+.success-container{
+    margin: 1rem 0;
+    padding :1rem;
+    border:1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    min-height :80vh;
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.success-icon{
+    height: 7rem;
+    width: 7rem;
+    color :var(--icon);
+}
+.success-container h1{
+    font-size: 3rem;
+    padding :1rem 0;
+    color :var(--primary);
+    text-align: center;
+}
+.success-container p{
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 500;
+}
+.success-container p span{
+    color: var(--primary);
+    font-weight: 700;
+}
+.success-btn{
+    margin: 2rem 0;
+    font-size: 2rem;
+    border-radius: var(--radius-xl);
 }
