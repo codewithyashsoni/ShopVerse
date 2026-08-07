@@ -6,6 +6,12 @@ Designed with a clean UI, reusable React components, and Context API for global 
 
 ---
 
+🌐 Live Demo
+
+🔗 Live Website: https://shopverse-yash.netlify.app/
+
+---
+
 ## 📸 Preview
 
 ### Home Page
