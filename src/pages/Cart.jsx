@@ -8,7 +8,6 @@ import EmptyCart from "../components/EmptyCart.jsx"
 function Cart(){
     const navigate = useNavigate();
     const { cartItems } = useContext(CartContext);
-    console.log(cartItems);
 
     function handleContinueShopping(){
         navigate("/");
@@ -46,9 +45,6 @@ function Cart(){
                         </>
                     )
                 }
-                
-
-                
             </div>
         </div>
     )

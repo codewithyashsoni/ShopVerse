@@ -6,8 +6,6 @@ import CartContext from "../context/CartContext.jsx"
 function NavBar(){
     const {cartItems} = useContext(CartContext);
 
-    console.log(cartItems);
-
     let totalItems = cartItems.reduce((accumulator, currentEl) => {
         return accumulator + currentEl.quantity
     }, 0)
